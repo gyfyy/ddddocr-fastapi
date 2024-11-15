@@ -10,7 +10,7 @@ class OCRService:
     def ocr_classification(self, image: bytes, probability: bool = False, charsets: Optional[str] = None, png_fix: bool = False) -> Union[str, dict]:
         if charsets:
             self.ocr.set_ranges(charsets)
-        result = self.ocr.classification(image, probability=probability, png_fix=png_fix)
+        result = self.ocr.classification(image)
         return result
 
     def slide_match(self, target: bytes, background: bytes, simple_target: bool = False) -> List[int]:
